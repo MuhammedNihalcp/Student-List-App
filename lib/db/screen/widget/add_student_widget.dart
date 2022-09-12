@@ -98,7 +98,10 @@ class AddStudentsWidgeyt extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'File your EmailId';
+                  return 'File your Email Id';
+                }
+                if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                  return 'Please enter your valid email id';
                 } else {
                   return null;
                 }
@@ -152,8 +155,8 @@ class AddStudentsWidgeyt extends StatelessWidget {
       final _student =
           StudentModel(name: _name, age: _age, phone: _phone, email: _email);
       addStudent(_student);
-      Navigator.push(
-          ctx, MaterialPageRoute(builder: (ctx) => const ListPage()));
+      Navigator.of(ctx).pushReplacement(
+          MaterialPageRoute(builder: (ctx) => const ListPage()));
     }
   }
 }

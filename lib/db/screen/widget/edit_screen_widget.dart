@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stutent_list/db/function/db_function.dart';
@@ -174,7 +176,7 @@ class _EditScreenState extends State<EditScreen> {
                 ),
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
+                    backgroundColor: Colors.blue,
                   ),
                   onPressed: () {
                     if (_formkey.currentState!.validate()) {
